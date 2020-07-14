@@ -17,7 +17,6 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <h1>Drum Machine</h1>
         <div className="drummachine">
           <div className="drummachine__drumpad">
             {this.state.preset ? presetOne.map(pad =>
