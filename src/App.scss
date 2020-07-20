@@ -1,7 +1,8 @@
+$sm: 600px;
+
 .app {
     font-family: 'Audiowide', cursive;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
@@ -11,12 +12,15 @@
 }
 
 .drummachine {
+    margin: 0 calc(15vw - 20px);
     display: flex;
     justify-content: center;
     align-items: center;
 
-    @media (max-width: 600px) {
+
+    @media (max-width: $sm) {
         flex-direction: column-reverse;
+        width: 100%;
     }
 }
 
@@ -26,21 +30,24 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 20px;
+
+    @media (max-width: $sm) {
+        width: 100%;
+    }
 }
 
 .drummachine__controlpanel {
     padding: 10px;
-    align-self: flex-start;
     display: grid;
     grid-template-columns: 1fr 1fr;
-
-    @media (max-width: 600px) {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 20px;
     align-items: stretch;
+
+    @media (max-width: $sm) {
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+    }
 
 }
 
@@ -110,9 +117,9 @@
     user-select: none;
     transition: all .05s;
 
-    @media (max-width: 600px) {
-        width: 70px;
-        height: 70px;
+    @media (max-width: $sm) {
+        width: auto;
+        height: auto;
     }
 
     &:active,
