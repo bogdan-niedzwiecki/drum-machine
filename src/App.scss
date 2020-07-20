@@ -1,30 +1,32 @@
-$sm: 600px;
+$sm: 450px;
 
 .app {
+    box-sizing: border-box;
+    padding: 10px;
     font-family: 'Audiowide', cursive;
     display: flex;
-    justify-content: center;
     align-items: center;
     width: 100vw;
-    min-height: 100vh;
-    height: 100%;
+    height: 100vh;
     background-color: #808080;
 }
 
 .drummachine {
-    margin: 0 calc(15vw - 20px);
+    max-width: 800px;
+    width: 100%;
+    max-height: 450px;
+    height: 100%;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
-
 
     @media (max-width: $sm) {
         flex-direction: column-reverse;
-        width: 100%;
+        max-height: 100%;
     }
 }
 
 .drummachine__drumpad {
+    flex-basis: 60%;
     padding: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -32,23 +34,21 @@ $sm: 600px;
     grid-gap: 20px;
 
     @media (max-width: $sm) {
-        width: 100%;
+        flex-basis: 50%;
     }
 }
 
 .drummachine__controlpanel {
+    flex-basis: 40%;
     padding: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 20px;
-    align-items: stretch;
 
     @media (max-width: $sm) {
-        grid-template-columns: 1fr 1fr 1fr;
-        width: 100%;
+        flex-basis: 50%;
     }
-
 }
 
 .drummachine__display {
@@ -65,23 +65,19 @@ $sm: 600px;
 .drummachine__volume {
     grid-column-start: 1;
     grid-column-end: -1;
-    width: 100%;
-    height: 30px;
     -webkit-tap-highlight-color: transparent;
 
     input[type=range] {
         box-sizing: border-box;
         -webkit-appearance: none;
-        margin: 0;
         width: 100%;
-        height: 100%;
         border-radius: 20px;
         background: #808080;
         box-shadow: inset 3px 3px 6px #787878, inset -3px -3px 6px #888888;
         cursor: pointer;
-        outline: none;
         transition: all .05s;
         padding: 5px;
+        outline: none;
 
         &:active {
             box-shadow: inset 5px 5px 10px #787878, inset -5px -5px 10px #888888, 5px 5px 10px #787878, -5px -5px 10px #888888;
@@ -105,9 +101,8 @@ $sm: 600px;
 }
 
 .drummachine__pad {
+    height: 100%;
     font-size: 1.3em;
-    width: 100px;
-    height: 100px;
     border-radius: 20px;
     background: #808080;
     box-shadow: inset 0 0 0 #787878, inset 0 0 0 #888888, 7px 7px 16px #787878, -7px -7px 16px #888888;
@@ -119,9 +114,9 @@ $sm: 600px;
     transition: all .05s;
     -webkit-tap-highlight-color: transparent;
 
-    @media (max-width: $sm) {
-        width: 100%;
-        height: 100%;
+    p {
+        margin: 0;
+        padding: 0;
     }
 
     &:active,
@@ -132,7 +127,9 @@ $sm: 600px;
 }
 
 input[type=checkbox] {
-    display: none;
+    position: absolute;
+    width: 0;
+    height: 0;
 
     &:checked+.drummachine__pad {
         box-shadow: inset 7px 7px 16px #787878, inset -7px -7px 16px #888888, 7px 7px 16px #787878, -7px -7px 16px #888888;
