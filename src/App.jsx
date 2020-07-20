@@ -11,7 +11,7 @@ class App extends Component {
     preset: false,
     power: true,
     display: '',
-    volume: 0.75
+    volume: 0.3
   }
 
   render() {
