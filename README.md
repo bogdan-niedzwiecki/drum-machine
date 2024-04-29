@@ -2,4 +2,4 @@
 
 🔥 Live: https://bn-drum-machine.netlify.app/
 
-#react#audio
+#react #typescript #vite #sass #lint #husky
