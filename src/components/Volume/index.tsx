@@ -28,11 +28,11 @@ const Volume = ({ volume, onChange }: VolumeProps) => {
   return (
     <div className="drummachine__volume">
       <input
+        data-testid="volume"
         type="range"
         step="0.05"
         min="0"
         max="1"
-        onKeyDown={(e) => e.preventDefault()}
         value={volume}
         onChange={handleInputChange}
       />

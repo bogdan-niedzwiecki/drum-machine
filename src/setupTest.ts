@@ -3,3 +3,11 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import "@testing-library/jest-dom";
+import { vi } from "vitest";
+
+vi.spyOn(window.HTMLMediaElement.prototype, "pause").mockImplementation(
+  () => {}
+);
+vi.spyOn(window.HTMLMediaElement.prototype, "play").mockImplementation(
+  async () => {}
+);

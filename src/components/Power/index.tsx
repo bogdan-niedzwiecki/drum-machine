@@ -23,7 +23,7 @@ const Power = ({ btn, power, onChange }: PowerProps) => {
         checked={power}
         onChange={onChange}
       />
-      <label htmlFor="power" className="drummachine__pad">
+      <label data-testid="power" htmlFor="power" className="drummachine__pad">
         {btn}
       </label>
     </div>

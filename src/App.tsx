@@ -55,7 +55,7 @@ const App = () => {
     <div className="app">
       <div className="drummachine">
         <div className="drummachine__drumpad">
-          {preset === "primary"
+          {preset === PresetEnum.Primary
             ? presetPrimary.map(({ name, url, btn }, index) => (
                 <Pad
                   key={index}
@@ -80,7 +80,9 @@ const App = () => {
               ))}
         </div>
         <div className="drummachine__controlpanel">
-          <div className="drummachine__display">{display}</div>
+          <div data-testid="display" className="drummachine__display">
+            {display}
+          </div>
           <Power btn="p" power={power} onChange={handlePowerChange} />
           <Preset btn="[" preset={preset} onChange={handlePresetChange} />
           <Volume volume={volume} onChange={handleVolumeChange} />

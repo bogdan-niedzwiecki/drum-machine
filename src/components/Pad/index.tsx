@@ -43,7 +43,12 @@ const Pad = ({ name, btn, url, power, volume, onPlay }: PadProps) => {
   });
 
   return (
-    <button type="button" className={padClass} onClick={handlePlay}>
+    <button
+      data-testid="pad"
+      type="button"
+      className={padClass}
+      onClick={handlePlay}
+    >
       {btn}
     </button>
   );
