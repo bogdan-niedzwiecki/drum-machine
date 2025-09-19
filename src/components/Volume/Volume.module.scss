@@ -1,0 +1,16 @@
+.range {
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #808080;
+    box-shadow: 2px 2px 4px #6d6d6d, -2px -2px 4px #939393;
+
+    &:active {
+      background: linear-gradient(145deg, #737373, #898989);
+      box-shadow: 2px 2px 4px #6d6d6d, -2px -2px 4px #939393;
+    }
+  }
+}
