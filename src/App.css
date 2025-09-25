@@ -1,0 +1,42 @@
+@reference "./index.css";
+
+.app {
+  @apply box-border p-3 font-audiowide flex items-center w-screen h-screen bg-bg;
+}
+
+.drummachine {
+  @apply max-w-[800px] w-full md:max-h-[450px] h-full mx-auto flex md:flex-row flex-col-reverse max-h-full;
+}
+
+.drummachine__controlpanel {
+  @apply md:basis-[40%] basis-[50%] p-[10px] grid grid-cols-2 grid-rows-3 gap-[20px];
+}
+
+.drummachine__display {
+  @apply col-start-1 col-end-[-1] flex items-center justify-center rounded-[20px] bg-bg shadow-[inset_3px_3px_6px_var(--color-shadow-1),inset_-3px_-3px_6px_var(--color-shadow-2)];
+}
+
+.drummachine__pad {
+  @apply active:text-pad-active rounded-2xl focus-visible:outline-none bg-bg shadow-[inset_0_0_0_var(--color-shadow-1),inset_0_0_0_var(--color-shadow-2),7px_7px_16px_var(--color-shadow-1),-7px_-7px_16px_var(--color-shadow-2)] flex justify-center items-center cursor-pointer select-none transition-all duration-[50ms] border-none h-full text-pad active:shadow-[inset_7px_7px_16px_var(--color-shadow-1),inset_-7px_-7px_16px_var(--color-shadow-2),7px_7px_16px_var(--color-shadow-1),-7px_-7px_16px_var(--color-shadow-2)];
+}
+
+.drummachine__pad--pressed {
+  @apply shadow-[inset_7px_7px_16px_var(--color-shadow-1),inset_-7px_-7px_16px_var(--color-shadow-2),7px_7px_16px_var(--color-shadow-1),-7px_-7px_16px_var(--color-shadow-2)] text-pad-active;
+}
+
+.drummachine__drumpad {
+  @apply md:basis-[60%] basis-[50%] p-3 grid grid-cols-3 grid-rows-3 gap-5;
+}
+
+.drummachine__volume {
+  @apply box-border appearance-none w-full rounded-2xl bg-bg shadow-[inset_3px_3px_6px_var(--color-shadow-1),inset_-3px_-3px_6px_var(--color-shadow-2)] cursor-pointer transition-all duration-[50ms] p-[5px] outline-none active:shadow-[inset_5px_5px_10px_var(--color-shadow-1),inset_-5px_-5px_10px_var(--color-shadow-2),5px_5px_10px_var(--color-shadow-1),-5px_-5px_10px_var(--color-shadow-2)];
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    @apply w-5 h-5 rounded-full cursor-pointer bg-bg shadow-[2px_2px_4px_var(--color-shadow-3),-2px_-2px_4px_var(--color-shadow-4)];
+
+    &:active {
+      @apply bg-[linear-gradient(145deg,_var(--color-gradient-1),_var(--color-gradient-2))] shadow-[2px_2px_4px_var(--color-shadow-3),-2px_-2px_4px_var(--color-shadow-4)];
+    }
+  }
+}

@@ -20,7 +20,7 @@ describe("Pad", () => {
 
     fireEvent.keyDown(document, { key: "Q" });
 
-    expect(padButton).toHaveClass("text-[1.25em]");
+    expect(padButton).toHaveClass("drummachine__pad--pressed");
   });
 
   it("Should be unpressed on 'Q' keyup", async () => {
@@ -32,6 +32,6 @@ describe("Pad", () => {
     fireEvent.keyDown(document, { key: "Q" });
     fireEvent.keyUp(document, { key: "Q" });
 
-    expect(padButton).not.toHaveClass("text-[1.25em]");
+    expect(padButton).not.toHaveClass("drummachine__pad--pressed");
   });
 });

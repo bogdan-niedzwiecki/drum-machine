@@ -1,6 +1,5 @@
 import { ChangeEvent, useEffect } from "react";
 import { VolumeProps } from "./Volume.types";
-import styles from "./Volume.module.scss";
 
 const Volume = ({ volume, onChange }: VolumeProps) => {
   useEffect(() => {
@@ -29,7 +28,7 @@ const Volume = ({ volume, onChange }: VolumeProps) => {
   return (
     <div className="col-start-1 col-end-[-1] tap-transparent">
       <input
-        className={`${styles.range} box-border appearance-none w-full rounded-[20px] bg-[#808080] shadow-[inset_3px_3px_6px_#787878,inset_-3px_-3px_6px_#888888] cursor-pointer transition-all duration-[50ms] p-[5px] outline-none active:shadow-[inset_5px_5px_10px_#787878,inset_-5px_-5px_10px_#888888,5px_5px_10px_#787878,-5px_-5px_10px_#888888]`}
+        className="drummachine__volume"
         data-testid="volume"
         type="range"
         step="0.05"

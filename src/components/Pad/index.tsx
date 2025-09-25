@@ -27,7 +27,6 @@ const Pad = ({ name, btn, url, power, volume, onPlay }: PadProps) => {
   const handlePlay = useCallback(() => {
     if (power) {
       audio.volume = volume;
-      audio.pause();
       audio.currentTime = 0;
       audio.play();
       onPlay(name);
@@ -38,13 +37,9 @@ const Pad = ({ name, btn, url, power, volume, onPlay }: PadProps) => {
     if (pressed) handlePlay();
   }, [pressed, handlePlay]);
 
-  const padClass = classNames(
-    "h-full text-[1.3em] active:shadow-[inset_7px_7px_16px_#787878,inset_-7px_-7px_16px_#888888,7px_7px_16px_#787878,-7px_-7px_16px_#888888] active:text-[1.25em] rounded-[20px] focus-visible:outline-none bg-[#808080] shadow-[inset_0_0_0_#787878,inset_0_0_0_#888888,7px_7px_16px_#787878,-7px_-7px_16px_#888888] flex justify-center items-center cursor-pointer select-none transition-all duration-[50ms] border-none font-inherit tap-transparent",
-    {
-      "shadow-[inset_7px_7px_16px_#787878,inset_-7px_-7px_16px_#888888,7px_7px_16px_#787878,-7px_-7px_16px_#888888] text-[1.25em]":
-        pressed,
-    }
-  );
+  const padClass = classNames("drummachine__pad", {
+    "drummachine__pad--pressed": pressed,
+  });
 
   return (
     <button

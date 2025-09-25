@@ -2,6 +2,15 @@
 
 @theme {
   --font-audiowide: "Audiowide", cursive;
+  --color-bg: #808080;
+  --color-shadow-1: #787878;
+  --color-shadow-2: #888888;
+  --color-shadow-3: #6d6d6d;
+  --color-shadow-4: #939393;
+  --color-gradient-1: #737373;
+  --color-gradient-2: #898989;
+  --text-pad: 1.3em;
+  --text-pad-active: 1.25em;
 }
 
 body {
